@@ -434,8 +434,8 @@ const LandingPage = () => {
 
   return (
     <div className="min-h-[calc(100vh-4rem)]">
-      {/* Hero Section */}
-      <section className="relative bg-ommax-deep-blue overflow-hidden">
+      {/* Hero Section - Minimalist */}
+      <section className="relative bg-ommax-deep-blue overflow-hidden flex items-center min-h-[calc(100vh-4rem)]">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
@@ -445,105 +445,66 @@ const LandingPage = () => {
           }} />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
-          <div className="max-w-3xl">
-            <p className="text-[#00D4AA] font-semibold text-sm uppercase tracking-widest mb-4 animate-fade-in">
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-24 w-full">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-[#00D4AA] font-semibold text-sm uppercase tracking-widest mb-6 animate-fade-in">
               Building Digital Leaders
             </p>
-            <h1 className="text-display-lg lg:text-display-xl text-white mb-6 animate-slide-up">
+            <h1 className="text-display-lg lg:text-display-xl text-white mb-8 animate-slide-up">
               Your <span className="font-extrabold">end-to-end consulting partner</span>: From strategy to AI-powered value creation
             </h1>
-            <p className="text-white/80 text-lg lg:text-xl leading-relaxed mb-10 max-w-2xl animate-slide-up" style={{ animationDelay: '100ms' }}>
-              Explore our comprehensive Use Case Library. Discover proven digital 
-              transformation solutions across industries—from concept to implementation.
-            </p>
             
-            <div className="flex flex-wrap gap-4 animate-slide-up" style={{ animationDelay: '200ms' }}>
+            {/* Two Primary Action Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12 animate-slide-up" style={{ animationDelay: '100ms' }}>
               <button
                 onClick={() => navigate('/explore')}
-                className="inline-flex items-center justify-center px-6 py-3 bg-[#00D4AA] text-ommax-deep-blue font-semibold text-sm uppercase tracking-wider hover:bg-[#00E5BB] transition-colors"
+                className="w-full sm:w-auto min-w-[280px] inline-flex items-center justify-center px-8 py-5 bg-[#00D4AA] text-ommax-deep-blue font-bold text-base uppercase tracking-wider hover:bg-[#00E5BB] transition-all duration-200 shadow-sharp-lg hover:shadow-sharp-lg hover:scale-105"
               >
-                Explore Use Cases
+                <svg
+                  className="w-5 h-5 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="square"
+                    strokeLinejoin="miter"
+                    strokeWidth={2}
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+                Use Case Library
               </button>
+              
               <button
                 onClick={() => navigate('/add')}
-                className="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-ommax-deep-blue"
+                className="w-full sm:w-auto min-w-[280px] inline-flex items-center justify-center px-8 py-5 bg-transparent text-white font-bold text-base uppercase tracking-wider border-2 border-white hover:bg-white hover:text-ommax-deep-blue transition-all duration-200 shadow-sharp-lg hover:scale-105"
               >
-                Add New Use Case
+                <svg
+                  className="w-5 h-5 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="square"
+                    strokeLinejoin="miter"
+                    strokeWidth={2}
+                    d="M12 4v16m8-8H4"
+                  />
+                </svg>
+                Use Case Upload
               </button>
             </div>
 
             {stats && (
-              <div className="mt-12 pt-8 border-t border-white/20 animate-fade-in" style={{ animationDelay: '400ms' }}>
-                <div className="flex items-baseline gap-2">
-                  <span className="text-5xl font-bold text-white">{stats.total}</span>
-                  <span className="text-white/60 text-lg">use cases catalogued</span>
+              <div className="pt-8 border-t border-white/20 animate-fade-in inline-block" style={{ animationDelay: '200ms' }}>
+                <div className="flex items-baseline gap-3">
+                  <span className="text-6xl font-bold text-[#00D4AA]">{stats.total}</span>
+                  <span className="text-white/80 text-xl">use cases available</span>
                 </div>
               </div>
             )}
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-display-md text-ommax-black mb-4">
-              Strategic Digital Solutions
-            </h2>
-            <p className="text-ommax-light-gray text-lg max-w-2xl mx-auto">
-              Leverage our curated library of proven use cases to accelerate your digital transformation journey.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Industry-Specific',
-                description: 'Use cases tailored to your industry vertical, from manufacturing to financial services.',
-                icon: (
-                  <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                ),
-              },
-              {
-                title: 'Value Chain Coverage',
-                description: 'End-to-end solutions spanning the entire value chain from procurement to customer service.',
-                icon: (
-                  <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-                ),
-              },
-              {
-                title: 'Measurable Impact',
-                description: 'Each use case includes quantifiable benefits and implementation guidelines.',
-                icon: (
-                  <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                ),
-              },
-            ].map((feature, index) => (
-              <div
-                key={feature.title}
-                className="group p-8 border border-ommax-border-gray hover:border-ommax-black transition-all duration-300"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="w-12 h-12 bg-ommax-light-bg flex items-center justify-center mb-6 group-hover:bg-ommax-red transition-colors">
-                  <svg
-                    className="w-6 h-6 text-ommax-black group-hover:text-white transition-colors"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    {feature.icon}
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-ommax-black mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-ommax-light-gray leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
