@@ -29,6 +29,10 @@ export default {
           // Accent Colors
           'deep-blue': '#0A1628',
           'navy': '#1A2744',
+          
+          // OMMAX Cyan/Teal (from website)
+          'cyan': '#00D4AA',
+          'cyan-light': '#00E5BB',
         },
       },
       fontFamily: {

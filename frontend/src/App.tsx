@@ -447,30 +447,27 @@ const LandingPage = () => {
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
           <div className="max-w-3xl">
-            <p className="text-ommax-red font-semibold text-sm uppercase tracking-widest mb-4 animate-fade-in">
+            <p className="text-[#00D4AA] font-semibold text-sm uppercase tracking-widest mb-4 animate-fade-in">
               Building Digital Leaders
             </p>
             <h1 className="text-display-lg lg:text-display-xl text-white mb-6 animate-slide-up">
-              AI-Powered
-              <br />
-              <span className="text-ommax-red">Use Case Library</span>
+              Your <span className="font-extrabold">end-to-end consulting partner</span>: From strategy to AI-powered value creation
             </h1>
             <p className="text-white/80 text-lg lg:text-xl leading-relaxed mb-10 max-w-2xl animate-slide-up" style={{ animationDelay: '100ms' }}>
-              Explore our comprehensive collection of digital transformation use cases. 
-              From strategy to implementation, discover how AI and digital solutions 
-              drive measurable value across industries.
+              Explore our comprehensive Use Case Library. Discover proven digital 
+              transformation solutions across industries—from concept to implementation.
             </p>
             
             <div className="flex flex-wrap gap-4 animate-slide-up" style={{ animationDelay: '200ms' }}>
               <button
                 onClick={() => navigate('/explore')}
-                className="btn-primary"
+                className="inline-flex items-center justify-center px-6 py-3 bg-[#00D4AA] text-ommax-deep-blue font-semibold text-sm uppercase tracking-wider hover:bg-[#00E5BB] transition-colors"
               >
                 Explore Use Cases
               </button>
               <button
                 onClick={() => navigate('/add')}
-                className="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-ommax-black"
+                className="btn-secondary bg-transparent text-white border-white hover:bg-white hover:text-ommax-deep-blue"
               >
                 Add New Use Case
               </button>
