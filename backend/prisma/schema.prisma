@@ -1,0 +1,32 @@
+// Prisma Schema for Use Case Library
+// PostgreSQL database with optimized indexing for enterprise use
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model UseCase {
+  id                      Int      @id @default(autoincrement())
+  useCase                 String   @map("use_case")
+  conceptDescription      String   @map("concept_description") @db.Text
+  concreteImplementation  String?  @map("concrete_implementation") @db.Text
+  benefit                 String?  @db.Text
+  industry                String?
+  department              String?
+  valueChainStep          String?  @map("value_chain_step")
+  url                     String?
+  createdAt               DateTime @default(now()) @map("created_at")
+  updatedAt               DateTime @updatedAt @map("updated_at")
+
+  @@index([industry])
+  @@index([valueChainStep])
+  @@index([department])
+  @@index([createdAt(sort: Desc)])
+  @@map("use_cases")
+}
+

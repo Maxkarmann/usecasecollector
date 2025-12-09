@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* OMMAX Corporate Design - Base Styles */
+@layer base {
+  html {
+    @apply antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-ommax-white text-ommax-black font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+
+  /* Sharp focus states */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-ommax-red ring-offset-2;
+  }
+}
+
+/* OMMAX Component Styles */
+@layer components {
+  /* Primary Button - OMMAX Red */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 
+           bg-ommax-red text-white font-semibold text-sm uppercase tracking-wider
+           border-0 rounded-none
+           transition-all duration-200 ease-out
+           hover:bg-ommax-red-dark
+           active:scale-[0.98]
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-ommax-red;
+  }
+
+  /* Secondary Button - Outlined */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3
+           bg-transparent text-ommax-black font-semibold text-sm uppercase tracking-wider
+           border-2 border-ommax-black rounded-none
+           transition-all duration-200 ease-out
+           hover:bg-ommax-black hover:text-white
+           active:scale-[0.98]
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Form Input - Sharp edges */
+  .input-field {
+    @apply w-full px-4 py-3
+           bg-white text-ommax-black text-base
+           border border-ommax-border-gray rounded-none
+           placeholder:text-ommax-light-gray
+           transition-all duration-200
+           focus:border-ommax-black focus:ring-0 focus:outline-none
+           disabled:bg-ommax-light-bg disabled:cursor-not-allowed;
+  }
+
+  /* Card - Clean borders, sharp edges */
+  .card {
+    @apply bg-white border border-ommax-border-gray rounded-none
+           transition-all duration-200
+           hover:border-ommax-medium-gray hover:shadow-sharp-md;
+  }
+
+  /* Error Banner */
+  .error-banner {
+    @apply w-full p-4 bg-white border-l-4 border-ommax-red
+           text-ommax-black text-sm;
+  }
+}
+
+/* Custom Scrollbar */
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #E0E0E0 transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #E0E0E0;
+    border-radius: 0;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: #CCCCCC;
+  }
+}
+
